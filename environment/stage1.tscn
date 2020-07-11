@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/envir_mesh.tres" type="MeshLibrary" id=1]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
+
+[node name="GridMap" type="GridMap"]
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 10, 1, 10 )
+data = {
+"cells": PoolIntArray( 0, 0, 1, 1, 0, 536870913, 2, 0, 536870913, 65535, 0, 1, 0, 1, 536870913, 1, 1, 1, 2, 1, 1, 65535, 1, 1, 65535, 2, -1610612731, 0, 65533, 536870913, 1, 65533, -1610612735, 2, 65533, -1610612735, 65535, 65533, -1610612735, 0, 65534, 1, 1, 65534, 1, 2, 65534, -1610612735, 65535, 65534, 1, 0, 65535, 1, 1, 65535, 536870913, 2, 65535, 1, 65535, 65535, 1 )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
