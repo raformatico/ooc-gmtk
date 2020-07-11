@@ -753,7 +753,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180521, -0.526478, 0 )
 shape = SubResource( 12 )
 
 [node name="pataDelanteDer" type="CollisionShape" parent="."]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.894572, -0.801118, 0.652775 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.917859, -0.758002, 0.652775 )
 shape = SubResource( 13 )
 
 [node name="pataDelanteIzq" type="CollisionShape" parent="."]
