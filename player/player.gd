@@ -47,3 +47,14 @@ func _physics_process(delta: float) -> void:
 	#apply_central_impulse(onetime_pressed())
 	
 	
+
+
+func _on_player_body_entered(body: Node) -> void:
+	print("entra algo... " + str(body.name))
+	if body.is_in_group("wall"):
+		print(body.name)
+	elif body.is_in_group("box"):
+		print("FIN")
+		print(body.name)
+	elif body.is_in_group("bomb"):
+		print("PIERDES")

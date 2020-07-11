@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://environment/box.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://environment/Crate_Albedo.jpg" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.708921, 0.512034, 0.501844 )
+
+[node name="box" type="MeshInstance"]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 8, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="." groups=[
+"box",
+]]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305176, 0, 0 )
+shape = SubResource( 2 )
