@@ -549,7 +549,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"points": PoolRealArray( 0.100098, -0.25, 0, 0.25, 0, 0.100098, -0.25, 0, 0.25, 0, 0.100098, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 0.100098, -0.25, 0, 0.25, 0, 0.258148, -0.25, 0, 0.25, 0, 0.100098, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/13/type = "bezier"
@@ -579,7 +579,7 @@ tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"points": PoolRealArray( 7.13394e-07, -0.25, 0, 0.25, 0, 7.13394e-07, -0.25, 0, 0.25, 0, 7.13394e-07, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 7.13394e-07, -0.25, 0, 0.25, 0, -4.88707e-07, -0.25, 0, 0.25, 0, 7.13394e-07, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/16/type = "bezier"
@@ -589,7 +589,7 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"points": PoolRealArray( 31.556, -0.25, 0, 0.25, 0, 31.556, -0.25, 0, 0.25, 0, 31.556, -0.25, 0, 0.25, 0 ),
+"points": PoolRealArray( 31.556, -0.25, 0, 0.25, 0, -69.472, -0.25, 0, 0.25, 0, 31.556, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/17/type = "bezier"
@@ -609,8 +609,8 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.0339737, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/19/type = "bezier"
 tracks/19/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:y")
@@ -619,8 +619,8 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( 5.96046e-08, -0.25, 0, 0.25, 0, 5.96046e-08, -0.25, 0, 0.25, 0, 5.96046e-08, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/20/type = "bezier"
 tracks/20/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:z")
@@ -629,8 +629,8 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( 0.308502, -0.25, 0, 0.25, 0, 0.387787, -0.25, 0, 0.25, 0, 0.308502, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/21/type = "bezier"
 tracks/21/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:x")
@@ -639,8 +639,8 @@ tracks/21/loop_wrap = true
 tracks/21/imported = false
 tracks/21/enabled = true
 tracks/21/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( 3.41798e-07, -0.25, 0, 0.25, 0, 6.83595e-07, -0.25, 0, 0.25, 0, 3.41798e-07, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/22/type = "bezier"
 tracks/22/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:y")
@@ -649,8 +649,8 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( -33.349, -0.25, 0, 0.25, 0, 34.324, -0.25, 0, 0.25, 0, -33.349, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 tracks/23/type = "bezier"
 tracks/23/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:z")
@@ -659,8 +659,8 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 3.5 )
+"points": PoolRealArray( -143.137, -0.25, 0, 0.25, 0, -143.137, -0.25, 0, 0.25, 0, -143.137, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
 }
 
 [sub_resource type="Animation" id=11]
@@ -934,7 +934,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574119, -0.52916, 0.338191 )
 
 [node name="PataPosteriorR" type="MeshInstance" parent="GatoPardo/Empty"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -0.786122, 0.589443, 0.185926, -0.599903, -0.800072, -9.84983e-09, 0.148755, -0.111538, 0.982564, 0.0221214, 5.96046e-08, 0.360127 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -942,7 +942,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574696, -0.53085, -0.308747 )
 
 [node name="PataPosteriorL" type="MeshInstance" parent="GatoPardo/Empty001"]
-transform = Transform( -0.712019, 0.468136, 0.523331, -0.549372, -0.835577, -1.24511e-08, 0.437283, -0.287504, 0.852129, 0.100098, -0.0517768, -0.354263 )
+transform = Transform( -0.69087, 0.454231, -0.562469, -0.549372, -0.835577, 1.21011e-09, -0.469986, 0.309005, 0.826818, 0.20301, -0.0517768, -0.354263 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -950,7 +950,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525442, 0.420851, 0.366192 )
 
 [node name="PataDelanteraR" type="MeshInstance" parent="GatoPardo/Empty002"]
-transform = Transform( -0.640482, 0.714253, -0.282181, -0.576108, -0.689825, -0.438453, -0.507822, -0.118255, 0.853307, 0.00406084, 1.7815e-09, 0.167056 )
+transform = Transform( 0.38557, 0.890267, 0.242403, -0.877322, 0.435096, -0.202482, -0.285732, -0.134594, 0.948811, 0.0884669, 3.88105e-08, 0.167056 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -958,7 +958,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525985, 0.419459, -0.356188 )
 
 [node name="PataDelanteraL" type="MeshInstance" parent="GatoPardo/Empty003"]
-transform = Transform( 0.701048, 0.409299, -0.583956, -0.291455, 0.911819, 0.289205, 0.650834, -0.0325497, 0.758522, 0.15566, -0.0309373, -0.175964 )
+transform = Transform( -0.475563, 0.79147, 0.383945, -0.749028, -0.593202, 0.295072, 0.461298, -0.14726, 0.874939, 0.0924856, -0.0309373, -0.175964 )
 mesh = SubResource( 6 )
 material/0 = null
 
