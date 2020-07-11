@@ -18,3 +18,4 @@ transform = Transform( 0.545707, 0.395084, -0.738995, 0, 0.88188, 0.471474, 0.83
 
 [node name="bichillo" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31229, 4.08828, 2.33511 )
+[connection signal="body_entered" from="bichillo" to="bichillo" method="_on_player_body_entered"]

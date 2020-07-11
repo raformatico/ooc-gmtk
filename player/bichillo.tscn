@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://player/unimanso/Arc Pavement.material" type="Material" id=1]
 [ext_resource path="res://player/unimanso/plastic touched.material" type="Material" id=2]
@@ -419,6 +419,251 @@ tracks/27/keys = {
 }
 
 [sub_resource type="Animation" id=10]
+resource_name = "nadando"
+length = 5.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("GatoPardo/Empty003/PataDelanteraL:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.156935, -0.25, 0, 0.25, 0, 0.077059, -0.25, 0, 0.25, 0, 0.156935, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GatoPardo/Empty003/PataDelanteraL:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.0309373, -0.25, 0, 0.25, 0, -0.0309373, -0.25, 0, 0.25, 0, -0.0309373, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("GatoPardo/Empty003/PataDelanteraL:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.175964, -0.25, 0, 0.25, 0, -0.175964, -0.25, 0, 0.25, 0, -0.175964, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("GatoPardo/Empty003/PataDelanteraL:rotation_degrees:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -16.8033, -0.25, 0, 0.25, 0, -17.2477, -0.25, 0, 0.25, 0, -16.8033, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("GatoPardo/Empty003/PataDelanteraL:rotation_degrees:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -38.8277, -0.25, 0, 0.25, 0, 38.6581, -0.25, 0, 0.25, 0, -38.8277, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("GatoPardo/Empty003/PataDelanteraL:rotation_degrees:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -15.4935, -0.25, 0, 0.25, 0, -155.398, -0.25, 0, 0.25, 0, -15.4935, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5, 5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("GatoPardo/Empty002/PataDelanteraR:translation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.135866, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("GatoPardo/Empty002/PataDelanteraR:translation:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 5.96046e-08, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("GatoPardo/Empty002/PataDelanteraR:translation:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0.167056, -0.25, 0, 0.25, 0, 0.167056, -0.25, 0, 0.25, 0, 0.167056, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("GatoPardo/Empty002/PataDelanteraR:rotation_degrees:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 26.6943, -0.25, 0, 0.25, 0, 3.6389, -0.25, 0, 0.25, 0, 26.6943, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("GatoPardo/Empty002/PataDelanteraR:rotation_degrees:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( -19.8685, -0.25, 0, 0.25, 0, 32.6552, -0.25, 0, 0.25, 0, -19.8685, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("GatoPardo/Empty002/PataDelanteraR:rotation_degrees:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( -143.814, -0.25, 0, 0.25, 0, -20.6557, -0.25, 0, 0.25, 0, -143.814, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("GatoPardo/Empty001/PataPosteriorL:translation:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0.100098, -0.25, 0, 0.25, 0, 0.100098, -0.25, 0, 0.25, 0, 0.100098, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("GatoPardo/Empty001/PataPosteriorL:translation:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( -0.0517768, -0.25, 0, 0.25, 0, -0.0517768, -0.25, 0, 0.25, 0, -0.0517768, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("GatoPardo/Empty001/PataPosteriorL:translation:z")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( -0.354263, -0.25, 0, 0.25, 0, -0.354263, -0.25, 0, 0.25, 0, -0.354263, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("GatoPardo/Empty001/PataPosteriorL:rotation_degrees:x")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 7.13394e-07, -0.25, 0, 0.25, 0, 7.13394e-07, -0.25, 0, 0.25, 0, 7.13394e-07, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("GatoPardo/Empty001/PataPosteriorL:rotation_degrees:y")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 31.556, -0.25, 0, 0.25, 0, 31.556, -0.25, 0, 0.25, 0, 31.556, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("GatoPardo/Empty001/PataPosteriorL:rotation_degrees:z")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( -146.676, -0.25, 0, 0.25, 0, -146.676, -0.25, 0, 0.25, 0, -146.676, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3.5, 5 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+tracks/19/type = "bezier"
+tracks/19/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:y")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+tracks/20/type = "bezier"
+tracks/20/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:z")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+tracks/21/type = "bezier"
+tracks/21/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:x")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+tracks/22/type = "bezier"
+tracks/22/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:y")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+tracks/23/type = "bezier"
+tracks/23/path = NodePath("GatoPardo/Empty/PataPosteriorR:rotation_degrees:z")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5 )
+}
+
+[sub_resource type="Animation" id=11]
 loop = true
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("GatoPardo/Empty/PataPosteriorR:translation:x")
@@ -661,16 +906,16 @@ tracks/23/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="CapsuleShape" id=11]
+[sub_resource type="CapsuleShape" id=12]
 height = 0.187069
 
-[sub_resource type="BoxShape" id=12]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 0.847063, 0.190504, 0.879642 )
 
-[sub_resource type="BoxShape" id=13]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 0.0676391, 0.07646, 0.104777 )
 
-[sub_resource type="BoxShape" id=14]
+[sub_resource type="BoxShape" id=15]
 extents = Vector3( 0.147538, 0.119008, 0.121989 )
 
 [node name="bichillo" type="RigidBody"]
@@ -689,7 +934,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574119, -0.52916, 0.338191 )
 
 [node name="PataPosteriorR" type="MeshInstance" parent="GatoPardo/Empty"]
-transform = Transform( -0.371611, 0.928389, 0, -0.928389, -0.371611, 0, 0, 0, 1, -0.0866403, -0.16129, 0.000982761 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -697,7 +942,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574696, -0.53085, -0.308747 )
 
 [node name="PataPosteriorL" type="MeshInstance" parent="GatoPardo/Empty001"]
-transform = Transform( 0.899908, 0.436079, 0, -0.436079, 0.899908, 0, 0, 0, 1, -0.0297397, -0.0428045, -0.025436 )
+transform = Transform( -0.712019, 0.468136, 0.523331, -0.549372, -0.835577, -1.24511e-08, 0.437283, -0.287504, 0.852129, 0.100098, -0.0517768, -0.354263 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -705,7 +950,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525442, 0.420851, 0.366192 )
 
 [node name="PataDelanteraR" type="MeshInstance" parent="GatoPardo/Empty002"]
-transform = Transform( 0.657283, 0.753644, 0, -0.753644, 0.657283, 0, 0, 0, 1, 0.121204, -0.0596803, -0.00599551 )
+transform = Transform( -0.640482, 0.714253, -0.282181, -0.576108, -0.689825, -0.438453, -0.507822, -0.118255, 0.853307, 0.00406084, 1.7815e-09, 0.167056 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -713,7 +958,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525985, 0.419459, -0.356188 )
 
 [node name="PataDelanteraL" type="MeshInstance" parent="GatoPardo/Empty003"]
-transform = Transform( -0.869167, 0.494518, 0, -0.494518, -0.869167, 0, 0, 0, 1, -0.0667785, -0.212777, -0.00738487 )
+transform = Transform( 0.701048, 0.409299, -0.583956, -0.291455, 0.911819, 0.289205, 0.650834, -0.0325497, 0.758522, 0.15566, -0.0309373, -0.175964 )
 mesh = SubResource( 6 )
 material/0 = null
 
@@ -737,7 +982,8 @@ material/0 = null
 autoplay = "andando"
 playback_speed = 13.34
 anims/andando = SubResource( 9 )
-anims/parado = SubResource( 10 )
+anims/nadando = SubResource( 10 )
+anims/parado = SubResource( 11 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0613604, -2.17217, 0 )
@@ -746,16 +992,16 @@ height = 2.14762
 
 [node name="cuerpo" type="CollisionShape" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.168678, 0, 0 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="caja" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180521, -0.526478, 0 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="pataDelanteDer" type="CollisionShape" parent="."]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.894572, -0.801118, 0.652775 )
-shape = SubResource( 13 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.917859, -0.758002, 0.652775 )
+shape = SubResource( 14 )
 
 [node name="pataDelanteIzq" type="CollisionShape" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.0991587, -1.03087, -0.499043 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
