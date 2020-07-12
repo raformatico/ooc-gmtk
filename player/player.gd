@@ -40,6 +40,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func onetime_pressed() -> Vector3:
+	if Input.is_action_just_pressed("win"):
+		win()
 	if Input.is_action_just_pressed("reload"):
 		replay()
 	if Input.is_action_just_pressed("west"):
@@ -251,8 +253,7 @@ func _physics_process(delta: float) -> void:
 		gravity_changed = false
 		changes_of_state -= 1
 	elif is_near_floor():
-		#bichillo_anim.play("andando")
-		bichillo_anim.play("parado")
+		bichillo_anim.play("andando")
 		if move_enabled:
 			linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
@@ -260,6 +261,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_bichillo_body_entered(body: Node) -> void:
+	bichillo_anim.play("choque")
 	print("entra algo... " + str(body.name))
 	if body.is_in_group("wall"):
 		print(body.name)
@@ -269,8 +271,19 @@ func _on_bichillo_body_entered(body: Node) -> void:
 		print("PIERDES")
 
 func win() -> void:
-	box.get_node("AnimationPlayer").play_backwards("abierto")
+	var box_anim : AnimationPlayer = box.get_node("AnimationPlayer")
+	box_anim.play_backwards("abierto")
+	yield(box_anim,"animation_finished")
 	print("YOU WIN")
+	if get_parent().name == "world1":
+		get_tree().change_scene("res://world2.tscn")
+	elif get_parent().name == "world2":
+		get_tree().change_scene("res://world3.tscn")
+	elif get_parent().name == "world3":
+		get_tree().change_scene("res://world4.tscn")
+	elif get_parent().name == "world4":
+		print("Se acabó lo bueno")
+	
 
 func end_game() -> void:
 	print("GAME OVER")
