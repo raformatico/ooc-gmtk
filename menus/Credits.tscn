@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://menus/fonts/CabinSketch-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://menus/fonts/fuentes_negrita.tres" type="DynamicFont" id=2]
+[ext_resource path="res://player/monstruo2/bichillo_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/monstruo2/Cuerpo.color.messed.bad.jpg" type="Texture" id=4]
+[ext_resource path="res://menus/Credits.gd" type="Script" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.71, 0.850167, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.968, 1, 0.76, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 58
+outline_size = 5
+outline_color = Color( 0.247059, 0.247059, 0.247059, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+outline_size = 2
+outline_color = Color( 0.352941, 0.352941, 0.352941, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Credits" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02846, 0 )
+width = 7.48306
+depth = 5.99611
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.84709, -3.4816 )
+width = 7.48306
+depth = 5.99611
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -4.43812, 0.84709, 0.120615 )
+width = 7.48306
+depth = 5.99611
+material = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.97722, 0, 0.212229, 0, 1, 0, -0.212229, 0, 0.97722, 0, 0.239427, 1.07051 )
+
+[node name="bichillo" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0330611, 0, 0.197248, 0, 0.2, 0, -0.197248, 0, 0.0330611, -0.80955, 0.175906, 0 )
+
+[node name="mitadomochito" parent="bichillo/Armaduramitado/Skeleton" index="0"]
+material/0 = SubResource( 5 )
+
+[node name="AnimationPlayer" parent="bichillo" index="1"]
+playback_speed = 2.0
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.871779, 0.0112085, 0.489772, -0.4899, 0.0199456, 0.871551, 0, -0.999738, 0.0228792, 0.0353699, 2.05152, 0 )
+light_color = Color( 0.796078, 0.862745, 0.203922, 1 )
+shadow_enabled = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 612.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -451.781
+margin_top = -260.079
+margin_right = -153.781
+margin_bottom = -45.0793
+custom_fonts/font = ExtResource( 2 )
+text = "Credits:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0206
+margin_top = -285.277
+margin_right = 1060.98
+margin_bottom = 229.723
+custom_fonts/font = SubResource( 3 )
+text = "Main programmer:
+    Rafantastico
+Modeler & GUI:
+    Djuango
+	    Kenny assets
+Music:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.57312
+margin_top = 132.751
+margin_right = 1462.43
+margin_bottom = 647.751
+custom_fonts/font = SubResource( 6 )
+text = "Classical Carnivale by
+ Twin Musicom 
+(twinmusicom.org)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -168.0
+margin_top = -85.0
+margin_right = -20.0
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 4 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+
+[editable path="bichillo"]
