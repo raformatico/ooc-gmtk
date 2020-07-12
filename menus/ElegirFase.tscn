@@ -17,7 +17,7 @@ albedo_texture = ExtResource( 5 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "menu"
-length = 10.0
+length = 20.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/Credits:text")
@@ -26,16 +26,13 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5, 5.5, 8.5 ),
+"times": PoolRealArray( 0, 5.6, 12, 19.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ "Select one level,
 and use  w,s,a,d,o,p to
 control the gravity.
-
-Get the critter back
-to the cage!
-(if you can control it)", "Get the critter back
+", "Get the critter back
 to the cage!
 (if you can control it)", "Everyone floats here...", "Good Luck!" ]
 }
@@ -47,7 +44,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "points": PoolRealArray( -0.80955, -0.25, 0, 0.25, 0, -1.49427, -0.25, 0, 0.25, 0, -0.80955, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 9.9 )
+"times": PoolRealArray( 0, 10.8, 19.8 )
 }
 tracks/2/type = "bezier"
 tracks/2/path = NodePath("bichillo:translation:y")
@@ -57,7 +54,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "points": PoolRealArray( 0.175906, -0.25, 0, 0.25, 0, 0.175906, -0.25, 0, 0.25, 0, 0.175906, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 9.9 )
+"times": PoolRealArray( 0, 10.8, 19.8 )
 }
 tracks/3/type = "bezier"
 tracks/3/path = NodePath("bichillo:translation:z")
@@ -67,7 +64,7 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "points": PoolRealArray( -0.270778, -0.25, 0, 0.25, 0, 1.17502, -0.25, 0, 0.25, 0, -0.270778, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 9.9 )
+"times": PoolRealArray( 0, 10.8, 19.8 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("bichillo:rotation_degrees:x")
@@ -77,7 +74,7 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+"times": PoolRealArray( 0, 10.8, 11.1, 19.8 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath("bichillo:rotation_degrees:y")
@@ -87,7 +84,7 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "points": PoolRealArray( 11.394, -0.25, 0, 0.25, 0, -39.407, -0.25, 0, 0.25, 0, 156.163, -0.25, 0, 0.25, 0, 11.394, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+"times": PoolRealArray( 0, 10.8, 11.1, 19.8 )
 }
 tracks/6/type = "bezier"
 tracks/6/path = NodePath("bichillo:rotation_degrees:z")
@@ -97,7 +94,7 @@ tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+"times": PoolRealArray( 0, 10.8, 11.1, 19.8 )
 }
 
 [node name="Credits" type="Spatial"]
@@ -124,7 +121,7 @@ material = SubResource( 2 )
 transform = Transform( 0.411944, 0, 0.911209, 0, 1, 0, -0.911209, 0, 0.411944, 0, 0.471814, 1.07051 )
 
 [node name="bichillo" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.182939, 0, 0.080827, 0, 0.2, 0, -0.080827, 0, -0.182939, -1.4523, 0.175906, 1.0864 )
+transform = Transform( 0.196058, 0, 0.0395108, 0, 0.2, 0, -0.0395108, 0, 0.196058, -0.80955, 0.175906, -0.270778 )
 
 [node name="mitadomochito" parent="bichillo/Armaduramitado/Skeleton" index="0"]
 material/0 = SubResource( 3 )
@@ -154,7 +151,13 @@ margin_top = -266.0
 margin_right = 117.0
 margin_bottom = 175.0
 custom_fonts/font = ExtResource( 2 )
-text = "Everyone floats here..."
+text = "Select one level,
+and use  w,s,a,d,o,p to
+control the gravity.
+
+Get the critter back
+to the cage!
+(if you can control it)"
 __meta__ = {
 "_edit_use_anchors_": false
 }

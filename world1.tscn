@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://environment/envir_mesh_plus.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://player/monstruo2/bichillo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://environment/box/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ui/Timer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.1, 1.5, 1.5 )
@@ -139,6 +140,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.774, 3.8, 3 )
 wait_time = 25.0
 one_shot = true
 autostart = true
+
+[node name="gui" parent="." instance=ExtResource( 4 )]
 [connection signal="timeout" from="Timer" to="bichillo" method="_on_Timer_timeout"]
 
 [editable path="box"]

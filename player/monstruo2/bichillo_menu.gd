@@ -25,9 +25,11 @@ func _ready():
 
 
 func set_chill_texture():
-	var m=$Armaduramitado/Skeleton/mitadomochito
-	m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.jpg")
+	#var m=$Armaduramitado/Skeleton/mitadomochito
+	#m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.jpg")
+	pass
 	
 func set_berseker_texture():
-	var m=$Armaduramitado/Skeleton/mitadomochito
-	m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.bad.jpg")
+	#var m=$Armaduramitado/Skeleton/mitadomochito
+	#m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.bad.jpg")
+	pass
