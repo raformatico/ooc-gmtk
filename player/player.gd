@@ -3,6 +3,8 @@ extends RigidBody
 export var force : float = 5
 export var speed  : float = 10
 
+export var move_enabled : bool = true
+
 export(bool) var humor setget set_humor
 
 func set_humor(tranquilo):
@@ -145,6 +147,7 @@ func is_near_floor() -> bool:
 	var pos : Position3D
 	var plane : Plane
 	if near_floor == true and gravity_changed == false:
+		unloock_axis()
 		near = near_floor
 	else:
 		#WEST
@@ -244,7 +247,8 @@ func _physics_process(delta: float) -> void:
 	elif is_near_floor():
 		#bichillo_anim.play("andando")
 		bichillo_anim.play("parado")
-		#linear_velocity = get_direction_run()
+		if move_enabled:
+			linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
 	#apply_central_impulse(onetime_pressed())
 

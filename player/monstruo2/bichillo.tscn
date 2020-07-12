@@ -736,12 +736,14 @@ height = 0.330052
 extents = Vector3( 0.764318, 0.180214, 0.95534 )
 
 [node name="bichillo" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991151, 0 )
 gravity_scale = 0.0
 contacts_reported = 4
 contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="Armaduramitado" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0535, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="Armaduramitado"]
 bones/0/name = "bone"
@@ -849,10 +851,10 @@ anims/pose = SubResource( 6 )
 anims/tipytap = SubResource( 7 )
 
 [node name="cuerpo" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14933, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0958344, 0 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.518517, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.534979, 0 )
 shape = SubResource( 9 )
 [connection signal="body_entered" from="." to="." method="_on_bichillo_body_entered"]
