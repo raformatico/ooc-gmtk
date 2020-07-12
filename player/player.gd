@@ -18,7 +18,7 @@ onready var bichillo : RigidBody = get_parent().get_node("bichillo")
 onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer")
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
-onready var stage1 : GridMap = get_parent().get_node("stage1")
+onready var stage : GridMap = get_parent().get_node("stage")
 onready var escape_points = get_parent().get_node("escape_points")
 
 onready var malla : MeshInstance = get_parent().get_node("bichillo/Armaduramitado/Skeleton/mitadomochito")
@@ -147,33 +147,34 @@ func is_near_floor() -> bool:
 	var pos : Position3D
 	var plane : Plane
 	if near_floor == true and gravity_changed == false:
-		unloock_axis()
+		#unloock_axis()
 		near = near_floor
 	else:
 		#WEST
 		if gravity_direction == WEST:
-			pos = stage1.get_node("p_west")
+			pos = stage.get_node("p_west")
 			plane = Plane(Vector3(0,0,1),pos.translation.z)
 		#EAST
 		if gravity_direction == EAST:
-			pos = stage1.get_node("p_east")
+			pos = stage.get_node("p_east")
 			plane = Plane(Vector3(0,0,1),pos.translation.z)
 		#UP
 		if gravity_direction == UP:
-			pos = stage1.get_node("p_up")
+			pos = stage.get_node("p_up")
 			plane = Plane(Vector3(0,1,0),pos.translation.y)
 		#DOWN
 		if gravity_direction == DOWN:
-			pos = stage1.get_node("p_down")
+			pos = stage.get_node("p_down")
 			plane = Plane(Vector3(0,1,0),pos.translation.y)
 		#NORTH
 		if gravity_direction == NORTH:
-			pos = stage1.get_node("p_north")
+			pos = stage.get_node("p_north")
 			plane = Plane(Vector3(-1,0,0),pos.translation.x)
 		#SOUTH
 		if gravity_direction == SOUTH:
-			pos = stage1.get_node("p_south")
+			pos = stage.get_node("p_south")
 			plane = Plane(Vector3(-1,0,0),pos.translation.x)
+		print(plane.distance_to(translation))
 		if abs(plane.distance_to(translation)) < DIST_MIN:
 			near = true
 	return near
