@@ -934,7 +934,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574119, -0.52916, 0.338191 )
 
 [node name="PataPosteriorR" type="MeshInstance" parent="GatoPardo/Empty"]
-transform = Transform( -0.786122, 0.589443, 0.185926, -0.599903, -0.800072, -9.84983e-09, 0.148755, -0.111538, 0.982564, 0.0221214, 5.96046e-08, 0.360127 )
+transform = Transform( -0.371611, 0.928388, 0, -0.928388, -0.371611, 0, 0, 0, 1, -0.0866403, -0.16129, 0.000982761 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -942,7 +942,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574696, -0.53085, -0.308747 )
 
 [node name="PataPosteriorL" type="MeshInstance" parent="GatoPardo/Empty001"]
-transform = Transform( -0.69087, 0.454231, -0.562469, -0.549372, -0.835577, 1.21011e-09, -0.469986, 0.309005, 0.826818, 0.20301, -0.0517768, -0.354263 )
+transform = Transform( 0.899907, 0.436079, 0, -0.436079, 0.899908, 0, 0, 0, 1, -0.0297397, -0.0428045, -0.025436 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -950,7 +950,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525442, 0.420851, 0.366192 )
 
 [node name="PataDelanteraR" type="MeshInstance" parent="GatoPardo/Empty002"]
-transform = Transform( 0.38557, 0.890267, 0.242403, -0.877322, 0.435096, -0.202482, -0.285732, -0.134594, 0.948811, 0.0884669, 3.88105e-08, 0.167056 )
+transform = Transform( 0.657283, 0.753643, 0, -0.753644, 0.657283, 0, 0, 0, 1, 0.121204, -0.0596803, -0.00599551 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -958,7 +958,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525985, 0.419459, -0.356188 )
 
 [node name="PataDelanteraL" type="MeshInstance" parent="GatoPardo/Empty003"]
-transform = Transform( -0.475563, 0.79147, 0.383945, -0.749028, -0.593202, 0.295072, 0.461298, -0.14726, 0.874939, 0.0924856, -0.0309373, -0.175964 )
+transform = Transform( -0.869167, 0.494518, 0, -0.494518, -0.869167, 0, 0, 0, 1, -0.0667785, -0.212777, -0.00738487 )
 mesh = SubResource( 6 )
 material/0 = null
 
