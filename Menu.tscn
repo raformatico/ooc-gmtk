@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://environment/envir_mesh_plus.meshlib" type="MeshLibrary" id=1]
+[ext_resource path="res://player/monstruo2/bichillo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://environment/box/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menus/fonts/CabinSketch-Bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 4 )
 
 [node name="Menu" type="Spatial"]
 
@@ -8,8 +15,77 @@
 mesh_library = ExtResource( 1 )
 cell_size = Vector3( 1, 1.25, 1 )
 data = {
-"cells": PoolIntArray(  )
+"cells": PoolIntArray( 0, 0, 1075183622, 1, 0, 1073741829, 2, 0, 5, 3, 0, 1073741829, 4, 0, 536870917, 5, 0, -1609564154, 65537, 0, 1074397193, 65538, 0, 1074397193, 65539, 0, 655369, 65540, 0, 1074397193, 65541, 0, 1074397193, 0, 1, 1075183622, 1, 1, 1073741829, 2, 1, 1073741829, 3, 1, 1073741829, 4, 1, -1610612731, 5, 1, 537919494, 65537, 1, 1074397193, 65538, 1, 1074397193, 65539, 1, 1074397193, 65540, 1, 1074397193, 65541, 1, 1074397193, 0, 2, 1441798, 1, 2, 5, 2, 2, 1073741829, 3, 2, 1073741829, 4, 2, 1073741829, 5, 2, 1074790407, 65537, 2, 655369, 65538, 2, 1074397193, 65539, 2, 537526281, 65540, 2, 655369, 65541, 2, 1074397193, 0, 3, 1075183622, 1, 3, 1073741829, 2, 3, 1073741829, 3, 3, 5, 4, 3, 1073741829, 5, 3, 1048582, 65537, 3, 1074397193, 65538, 3, 1074397193, 65539, 3, 1074397193, 65540, 3, 1074397193, 65541, 3, 1074397193, 0, 4, 1441798, 1, 4, -1073741819, 2, 4, 5, 3, 4, 5, 4, 4, 5, 5, 4, 1048582, 65537, 4, 1074397193, 65538, 4, 1074397193, 65539, 4, 1074397193, 65540, 4, 1074397193, 65541, 4, 1074397193, 1, 5, 6, 2, 5, 6, 3, 5, 6, 4, 5, 6, 1, 65535, 655366, 2, 65535, 655366, 3, 65535, 655366, 4, 65535, 655366 )
 }
 __meta__ = {
-"_editor_clip_": 0
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
 }
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.598185, 0, -0.801358, 0, 1, 0, 0.801358, 0, -0.598185, 1.42073, 1.25183, 0.581758 )
+fov = 40.6
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.41325, 1.2142, 2.6698 )
+depth = 6.1655
+
+[node name="CSGBox4" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92615, 2.90606, 2.6698 )
+depth = 6.1655
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14767, 1.2142, 1.31522 )
+depth = 1.3485
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14767, 1.2142, 3.59766 )
+depth = 1.3485
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76924, 1.85042, 3.08967 )
+light_color = Color( 0.745098, 0.807843, 0.203922, 1 )
+light_energy = 0.66
+light_indirect_energy = 1.86
+shadow_enabled = true
+shadow_reverse_cull_face = true
+
+[node name="luzRoja" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.39469, 0.677533, 2.27209 )
+light_color = Color( 0.988235, 0, 0, 1 )
+shadow_enabled = true
+shadow_reverse_cull_face = true
+
+[node name="bichillo" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.67649, 0 )
+
+[node name="box" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.2, 0, 0, 0, -3.25841e-08, 0.2, 0, -0.2, -3.25841e-08, 3.59155, 0.837848, 3.25903 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 599.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -280.0
+margin_top = 49.0
+margin_right = 282.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 1 )
+text = "Catdemonium"
+align = 1
+
+[node name="Label2" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
