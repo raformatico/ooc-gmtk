@@ -919,6 +919,8 @@ extents = Vector3( 0.0676391, 0.07646, 0.104777 )
 extents = Vector3( 0.147538, 0.119008, 0.121989 )
 
 [node name="bichillo" type="RigidBody"]
+contacts_reported = 4
+contact_monitor = true
 script = ExtResource( 3 )
 
 [node name="GatoPardo" type="MeshInstance" parent="."]
@@ -1004,3 +1006,4 @@ shape = SubResource( 14 )
 [node name="pataDelanteIzq" type="CollisionShape" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.0991587, -1.03087, -0.499043 )
 shape = SubResource( 15 )
+[connection signal="body_entered" from="." to="." method="_on_bichillo_body_entered"]

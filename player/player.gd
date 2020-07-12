@@ -2,11 +2,13 @@ extends RigidBody
 
 export var force : float = 10
 export var speed  : float = 10
+
 onready var bichillo : RigidBody = get_parent().get_node("bichillo")
 onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer")
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
 onready var stage1 : GridMap = get_parent().get_node("stage1")
+onready var escape_points = get_parent().get_node("escape_points")
 
 enum {NORTH, SOUTH, WEST, EAST, UP, DOWN}
 
@@ -14,7 +16,7 @@ const DIST_MIN : float = 1.2
 
 var gravity : = Vector3()
 var gravity_changed : bool = false
-var near_floor : bool = true
+var near_floor : bool = false
 var gravity_direction : int = DOWN
 
 # Called when the node enters the scene tree for the first time.
@@ -71,6 +73,8 @@ func letit_pressed() -> Vector3:
 	return gravity
 
 func turn_bichillo() -> void:
+	#var transform_i = transform
+	#var transform_f
 	#WEST
 	if gravity_direction == WEST:
 		rotation_degrees = Vector3(0,0,0)
@@ -109,7 +113,14 @@ func turn_bichillo() -> void:
 		axis_lock_angular_z = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
-
+	#var transfor_f = transform
+	#var a = Quat(transform_i.basis)
+	#var b = Quat(transform_f.basis)
+	#var c = a.slerp(b,0.5)
+	#transform.basis = Basis(c)
+	#https://docs.godotengine.org/es/stable/tutorials/3d/using_transforms.html
+	#ADD TWEEN PARA HACER MAS SMOOTH LA ROTACIÓN
+	
 func unloock_axis() -> void:
 	axis_lock_angular_x = false
 	axis_lock_angular_y = false
@@ -147,8 +158,6 @@ func is_near_floor() -> bool:
 		if gravity_direction == SOUTH:
 			pos = stage1.get_node("p_south")
 			plane = Plane(Vector3(-1,0,0),pos.translation.x)
-			
-		print(plane.distance_to(translation))
 		if abs(plane.distance_to(translation)) < DIST_MIN:
 			near = true
 	return near
@@ -160,36 +169,50 @@ func get_direction_run() -> Vector3:
 	var pos_ooc : Vector3 = self.translation
 	var direction : Vector3 = pos_ooc - box_pos.translation
 	var normal : Vector3
+	var escape_pos : Position3D
 	#WEST
 	if gravity_direction == WEST:
+		escape_pos = escape_points.get_node("esc_west")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(1,1,0)
 	#EAST
 	if gravity_direction == EAST:
+		escape_pos = escape_points.get_node("esc_east")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(1,1,0)
 	#UP
 	if gravity_direction == UP:
+		escape_pos = escape_points.get_node("esc_up")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(1,0,1)
 	#DOWN
 	if gravity_direction == DOWN:
+		escape_pos = escape_points.get_node("esc_down")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(1,0,1)
 	#NORTH
 	if gravity_direction == NORTH:
+		escape_pos = escape_points.get_node("esc_north")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(0,1,1)
 	#SOUTH
 	if gravity_direction == SOUTH:
+		escape_pos = escape_points.get_node("esc_south")
+		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(0,1,1)
-	direction = direction * Vector3(1,0,1)
-	return direction.normalized()*speed
-
-func _on_player_body_entered(body: Node) -> void:
-	print("entra algo... " + str(body.name))
-	if body.is_in_group("wall"):
-		print(body.name)
-	elif body.is_in_group("box"):
-		print("FIN")
-		print(body.name)
-	elif body.is_in_group("bomb"):
-		print("PIERDES")
+	#direction = pos_ooc - box_pos.translation
+	direction = direction * normal
+	direction = direction.normalized()
+	"""if direction.x == 0:
+		transform.basis.y = Vector3(0,direction.y,0)
+		transform.basis.z = Vector3(0,0,direction.z)
+	elif direction.y == 0:
+		transform.basis.x = Vector3(direction.x,0,0)
+		transform.basis.z = Vector3(0,0,direction.z)
+	elif direction.z == 0:
+		transform.basis.y = Vector3(0,direction.y,0)
+		transform.basis.x = Vector3(direction.x,0,0)"""
+	return direction*speed
 
 func _physics_process(delta: float) -> void:
 	#add_central_force(letit_pressed())
@@ -206,3 +229,14 @@ func _physics_process(delta: float) -> void:
 		linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
 	#apply_central_impulse(onetime_pressed())
+
+
+func _on_bichillo_body_entered(body: Node) -> void:
+	print("entra algo... " + str(body.name))
+	if body.is_in_group("wall"):
+		print(body.name)
+	elif body.is_in_group("bot"):
+		print("GANÉ")
+		print(body.name)
+	elif body.is_in_group("bomb"):
+		print("PIERDES")
