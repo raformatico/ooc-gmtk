@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bedSingle.obj-541232fef46425b6337e66d018b07f66.mesh"
+
+[deps]
+
+files=[ "res://.import/bedSingle.obj-541232fef46425b6337e66d018b07f66.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/bedSingle.obj"
+dest_files=[ "res://.import/bedSingle.obj-541232fef46425b6337e66d018b07f66.mesh", "res://.import/bedSingle.obj-541232fef46425b6337e66d018b07f66.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plantSmall2.obj-f79a9ef408b587cba61ec436d453246b.mesh"
+
+[deps]
+
+files=[ "res://.import/plantSmall2.obj-f79a9ef408b587cba61ec436d453246b.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/plantSmall2.obj"
+dest_files=[ "res://.import/plantSmall2.obj-f79a9ef408b587cba61ec436d453246b.mesh", "res://.import/plantSmall2.obj-f79a9ef408b587cba61ec436d453246b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mi_ventana.obj-96e3a40ba674060c70d40eb255d005d8.mesh"
+
+[deps]
+
+files=[ "res://.import/mi_ventana.obj-96e3a40ba674060c70d40eb255d005d8.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/mi_ventana.obj"
+dest_files=[ "res://.import/mi_ventana.obj-96e3a40ba674060c70d40eb255d005d8.mesh", "res://.import/mi_ventana.obj-96e3a40ba674060c70d40eb255d005d8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

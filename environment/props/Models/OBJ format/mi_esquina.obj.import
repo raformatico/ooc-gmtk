@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mi_esquina.obj-5061ce29a9517daa8ae3ca858a725280.mesh"
+
+[deps]
+
+files=[ "res://.import/mi_esquina.obj-5061ce29a9517daa8ae3ca858a725280.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/mi_esquina.obj"
+dest_files=[ "res://.import/mi_esquina.obj-5061ce29a9517daa8ae3ca858a725280.mesh", "res://.import/mi_esquina.obj-5061ce29a9517daa8ae3ca858a725280.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

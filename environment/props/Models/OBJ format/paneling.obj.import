@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paneling.obj-4fee1e6258087c43e337304b43edb9e0.mesh"
+
+[deps]
+
+files=[ "res://.import/paneling.obj-4fee1e6258087c43e337304b43edb9e0.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/paneling.obj"
+dest_files=[ "res://.import/paneling.obj-4fee1e6258087c43e337304b43edb9e0.mesh", "res://.import/paneling.obj-4fee1e6258087c43e337304b43edb9e0.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bathroomSink.obj-bc8e9341ede63786e4de8ab41a5b8639.mesh"
+
+[deps]
+
+files=[ "res://.import/bathroomSink.obj-bc8e9341ede63786e4de8ab41a5b8639.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/bathroomSink.obj"
+dest_files=[ "res://.import/bathroomSink.obj-bc8e9341ede63786e4de8ab41a5b8639.mesh", "res://.import/bathroomSink.obj-bc8e9341ede63786e4de8ab41a5b8639.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

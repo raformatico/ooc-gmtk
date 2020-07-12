@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/computerKeyboard.obj-ddb4c1b3e196a00ea0d881e96504badc.mesh"
+
+[deps]
+
+files=[ "res://.import/computerKeyboard.obj-ddb4c1b3e196a00ea0d881e96504badc.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/computerKeyboard.obj"
+dest_files=[ "res://.import/computerKeyboard.obj-ddb4c1b3e196a00ea0d881e96504badc.mesh", "res://.import/computerKeyboard.obj-ddb4c1b3e196a00ea0d881e96504badc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

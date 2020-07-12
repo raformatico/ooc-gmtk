@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookcaseClosed.obj-ea86c9537db75d3c80ccfd0f591c1731.mesh"
+
+[deps]
+
+files=[ "res://.import/bookcaseClosed.obj-ea86c9537db75d3c80ccfd0f591c1731.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/bookcaseClosed.obj"
+dest_files=[ "res://.import/bookcaseClosed.obj-ea86c9537db75d3c80ccfd0f591c1731.mesh", "res://.import/bookcaseClosed.obj-ea86c9537db75d3c80ccfd0f591c1731.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

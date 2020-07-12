@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mi_puerta.obj-0b033ba24bad86a3defc13603247adf6.mesh"
+
+[deps]
+
+files=[ "res://.import/mi_puerta.obj-0b033ba24bad86a3defc13603247adf6.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/mi_puerta.obj"
+dest_files=[ "res://.import/mi_puerta.obj-0b033ba24bad86a3defc13603247adf6.mesh", "res://.import/mi_puerta.obj-0b033ba24bad86a3defc13603247adf6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

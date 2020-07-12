@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tableRound.obj-ec7777ee85dc061b8ef18c096aefd03a.mesh"
+
+[deps]
+
+files=[ "res://.import/tableRound.obj-ec7777ee85dc061b8ef18c096aefd03a.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/tableRound.obj"
+dest_files=[ "res://.import/tableRound.obj-ec7777ee85dc061b8ef18c096aefd03a.mesh", "res://.import/tableRound.obj-ec7777ee85dc061b8ef18c096aefd03a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

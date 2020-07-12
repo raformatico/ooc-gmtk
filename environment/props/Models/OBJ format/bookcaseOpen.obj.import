@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookcaseOpen.obj-97c701fcc7e0d3e7ca6537ad5b17bd39.mesh"
+
+[deps]
+
+files=[ "res://.import/bookcaseOpen.obj-97c701fcc7e0d3e7ca6537ad5b17bd39.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/bookcaseOpen.obj"
+dest_files=[ "res://.import/bookcaseOpen.obj-97c701fcc7e0d3e7ca6537ad5b17bd39.mesh", "res://.import/bookcaseOpen.obj-97c701fcc7e0d3e7ca6537ad5b17bd39.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

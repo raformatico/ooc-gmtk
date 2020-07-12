@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mi_pared.obj-f95525dbc87f7c35971099b461bce7ef.mesh"
+
+[deps]
+
+files=[ "res://.import/mi_pared.obj-f95525dbc87f7c35971099b461bce7ef.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/mi_pared.obj"
+dest_files=[ "res://.import/mi_pared.obj-f95525dbc87f7c35971099b461bce7ef.mesh", "res://.import/mi_pared.obj-f95525dbc87f7c35971099b461bce7ef.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
