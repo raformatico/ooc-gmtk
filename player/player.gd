@@ -7,8 +7,11 @@ onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
 
+enum {NORTH, SOUTH, WEST, EAST, UP, DOWN}
+
 var gravity : = Vector3()
 var gravity_changed : bool = false
+var gravity_direction : int = DOWN
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,26 +22,32 @@ func onetime_pressed() -> Vector3:
 	if Input.is_action_just_pressed("west"):
 		if gravity != Vector3(0,0,-force):
 			gravity_changed = true
+			gravity_direction = WEST
 		gravity = Vector3(0,0,-force)
 	if Input.is_action_just_pressed("east"):
 		if gravity != Vector3(0,0,force):
 			gravity_changed = true
+			gravity_direction = EAST
 		gravity = Vector3(0,0,force)
 	if Input.is_action_just_pressed("up"):
 		if gravity != Vector3(0,force,0):
 			gravity_changed = true
+			gravity_direction = UP
 		gravity = Vector3(0,force,0)
 	if Input.is_action_just_pressed("down"):
 		if gravity != Vector3(0,-force,0):
 			gravity_changed = true
+			gravity_direction = DOWN
 		gravity = Vector3(0,-force,0)
 	if Input.is_action_just_pressed("north"):
 		if gravity != Vector3(force,0,0):
 			gravity_changed = true
+			gravity_direction = NORTH
 		gravity = Vector3(force,0,0)
 	if Input.is_action_just_pressed("south"):
 		if gravity != Vector3(-force,0,0):
 			gravity_changed = true
+			gravity_direction = SOUTH
 		gravity = Vector3(-force,0,0)
 	return gravity
 
@@ -59,39 +68,39 @@ func letit_pressed() -> Vector3:
 
 func turn_bichillo() -> void:
 	#WEST
-	if gravity == Vector3(0,0,-force):
+	if gravity_direction == WEST:
 		rotation_degrees = Vector3(0,0,0)
 		rotation_degrees.x = 90
 		axis_lock_angular_x = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
 	#EAST
-	if gravity == Vector3(0,0,force):
+	if gravity_direction == EAST:
 		rotation_degrees = Vector3(0,0,0)
 		rotation_degrees.x = -90
 		axis_lock_angular_x = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
 	#UP
-	if gravity == Vector3(0,force,0):
+	if gravity_direction == UP:
 		rotation_degrees.z = 180
 		axis_lock_angular_z = true
 		rotation_degrees.x = 0
 		axis_lock_angular_x = true
 	#DOWN
-	if gravity == Vector3(0,-force,0):
+	if gravity_direction == DOWN:
 		rotation_degrees.z = 0
 		axis_lock_angular_z = true
 		rotation_degrees.x = 0
 		axis_lock_angular_x = true
 	#NORTH
-	if gravity == Vector3(force,0,0):
+	if gravity_direction == NORTH:
 		rotation_degrees = Vector3(0,0,90)
 		axis_lock_angular_z = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
 	#SOUTH
-	if gravity == Vector3(-force,0,0):
+	if gravity_direction == SOUTH:
 		rotation_degrees = Vector3(0,0,-90)
 		axis_lock_angular_z = true
 		rotation_degrees.y = 0
