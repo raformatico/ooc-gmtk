@@ -274,15 +274,15 @@ func win() -> void:
 	var box_anim : AnimationPlayer = box.get_node("AnimationPlayer")
 	box_anim.play_backwards("abierto")
 	yield(box_anim,"animation_finished")
-	print("YOU WIN")
-	if get_parent().name == "world1":
+	get_tree().change_scene("res://menus/ElegirFase.tscn")
+	"""if get_parent().name == "world1":
 		get_tree().change_scene("res://world2.tscn")
 	elif get_parent().name == "world2":
 		get_tree().change_scene("res://world3.tscn")
 	elif get_parent().name == "world3":
 		get_tree().change_scene("res://world4.tscn")
 	elif get_parent().name == "world4":
-		print("Se acabó lo bueno")
+		print("Se acabó lo bueno")"""
 	
 
 func end_game() -> void:
