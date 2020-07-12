@@ -979,7 +979,6 @@ mesh = SubResource( 8 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "andando"
 playback_speed = 13.34
 anims/andando = SubResource( 9 )
 anims/nadando = SubResource( 10 )

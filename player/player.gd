@@ -6,8 +6,11 @@ onready var bichillo : RigidBody = get_parent().get_node("bichillo")
 onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer")
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
+onready var stage1 : GridMap = get_parent().get_node("stage1")
 
 enum {NORTH, SOUTH, WEST, EAST, UP, DOWN}
+
+const DIST_MIN : float = 0.1
 
 var gravity : = Vector3()
 var gravity_changed : bool = false
@@ -113,10 +116,77 @@ func unloock_axis() -> void:
 
 func is_near_floor() -> bool:
 	var near : bool = false
-	
+	var distance : float
+	var pos : Position3D
+	var plane : Plane
+	#WEST
+	if gravity_direction == WEST:
+		pos = stage1.get_node("p_west")
+		plane = Plane(Vector3(0,0,1),pos.translation.z)
+	#EAST
+	if gravity_direction == EAST:
+		pos = stage1.get_node("p_east")
+		plane = Plane(Vector3(0,0,-1),pos.translation.z)
+	#UP
+	if gravity_direction == UP:
+		pos = stage1.get_node("p_up")
+		plane = Plane(Vector3(0,-1,0),pos.translation.y)
+	#DOWN
+	if gravity_direction == DOWN:
+		pos = stage1.get_node("p_down")
+		plane = Plane(Vector3(0,1,0),pos.translation.y)
+	#NORTH
+	if gravity_direction == NORTH:
+		pos = stage1.get_node("p_north")
+		plane = Plane(Vector3(1,0,0),pos.translation.x)
+	#SOUTH
+	if gravity_direction == SOUTH:
+		pos = stage1.get_node("p_south")
+		plane = Plane(Vector3(-1,0,0),pos.translation.x)
+		
+	print(plane.distance_to(translation))
+	if abs(plane.distance_to(translation)) < DIST_MIN:
+		near = true
 	return near
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func get_direction_run() -> Vector3:
+	#Hacerlo en función de la dirección de la gravedad
+	#Devolver una velocidad solo si toca el suelo correspondiente a la gravedad
+	var pos_ooc : Vector3 = self.translation
+	var direction : Vector3 = pos_ooc - box_pos.translation
+	var normal : Vector3
+	#WEST
+	if gravity_direction == WEST:
+		normal = Vector3(1,1,0)
+	#EAST
+	if gravity_direction == EAST:
+		normal = Vector3(1,1,0)
+	#UP
+	if gravity_direction == UP:
+		normal = Vector3(1,0,1)
+	#DOWN
+	if gravity_direction == DOWN:
+		normal = Vector3(1,0,1)
+	#NORTH
+	if gravity_direction == NORTH:
+		normal = Vector3(0,1,1)
+	#SOUTH
+	if gravity_direction == SOUTH:
+		normal = Vector3(0,1,1)
+	direction = direction * Vector3(1,0,1)
+	return direction.normalized()*speed
+
+func _on_player_body_entered(body: Node) -> void:
+	print("entra algo... " + str(body.name))
+	if body.is_in_group("wall"):
+		print(body.name)
+	elif body.is_in_group("box"):
+		print("FIN")
+		print(body.name)
+	elif body.is_in_group("bomb"):
+		print("PIERDES")
+
 func _physics_process(delta: float) -> void:
 	#add_central_force(letit_pressed())
 	#linear_velocity = get_direction_run()
@@ -131,22 +201,3 @@ func _physics_process(delta: float) -> void:
 		linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
 	#apply_central_impulse(onetime_pressed())
-	
-	
-func get_direction_run() -> Vector3:
-	#Hacerlo en función de la dirección de la gravedad
-	#Devolver una velocidad solo si toca el suelo correspondiente a la gravedad
-	var pos_ooc : Vector3 = self.translation
-	var direction : Vector3 = pos_ooc - box_pos.translation
-	direction = direction * Vector3(1,0,1)
-	return direction.normalized()*speed
-
-func _on_player_body_entered(body: Node) -> void:
-	print("entra algo... " + str(body.name))
-	if body.is_in_group("wall"):
-		print(body.name)
-	elif body.is_in_group("box"):
-		print("FIN")
-		print(body.name)
-	elif body.is_in_group("bomb"):
-		print("PIERDES")
