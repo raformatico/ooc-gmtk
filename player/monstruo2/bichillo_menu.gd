@@ -19,11 +19,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func set_chill_texture():
 	#var m=$Armaduramitado/Skeleton/mitadomochito
 	#m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.jpg")
