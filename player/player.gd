@@ -40,10 +40,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func onetime_pressed() -> Vector3:
-	if Input.is_action_just_pressed("win"):
+	"""if Input.is_action_just_pressed("win"):
 		win()
 	if Input.is_action_just_pressed("reload"):
 		replay()
+	"""
 	if Input.is_action_just_pressed("west"):
 		if gravity != Vector3(0,0,-force):
 			gravity_changed = true
@@ -240,6 +241,7 @@ func get_direction_run() -> Vector3:
 	return direction*speed
 
 func _physics_process(delta: float) -> void:
+	
 	#add_central_force(letit_pressed())
 	#linear_velocity = get_direction_run()
 	if gravity_changed:
@@ -287,7 +289,7 @@ func win() -> void:
 
 func end_game() -> void:
 	print("GAME OVER")
-	get_tree().paused = true
+	get_tree().change_scene("res://menus/ElegirFase.tscn")
 
 func _on_Timer_timeout() -> void:
 	end_game()
