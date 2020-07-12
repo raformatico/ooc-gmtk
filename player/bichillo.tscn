@@ -936,7 +936,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574119, -0.52916, 0.338191 )
 
 [node name="PataPosteriorR" type="MeshInstance" parent="GatoPardo/Empty"]
-transform = Transform( -0.371611, 0.928388, 0, -0.928388, -0.371611, 0, 0, 0, 1, -0.0866403, -0.16129, 0.000982761 )
+transform = Transform( 0.429549, 0.903043, 0, -0.903043, 0.429549, 0, 0, 0, 1, -0.0866404, 0.0615829, 0.000982761 )
 mesh = SubResource( 3 )
 material/0 = null
 
@@ -944,7 +944,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.574696, -0.53085, -0.308747 )
 
 [node name="PataPosteriorL" type="MeshInstance" parent="GatoPardo/Empty001"]
-transform = Transform( 0.899907, 0.436079, 0, -0.436079, 0.899908, 0, 0, 0, 1, -0.0297397, -0.0428045, -0.025436 )
+transform = Transform( 0.541693, 0.840576, 0, -0.840575, 0.541693, 0, 0, 0, 1, -0.0297397, 0.0684993, -0.025436 )
 mesh = SubResource( 4 )
 material/0 = null
 
@@ -952,7 +952,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525442, 0.420851, 0.366192 )
 
 [node name="PataDelanteraR" type="MeshInstance" parent="GatoPardo/Empty002"]
-transform = Transform( 0.657283, 0.753643, 0, -0.753644, 0.657283, 0, 0, 0, 1, 0.121204, -0.0596803, -0.00599551 )
+transform = Transform( -0.25694, 0.966427, 4.02704e-05, -0.966428, -0.256939, -4.44554e-05, -3.26159e-05, -5.03407e-05, 1, -0.124849, -0.0881688, -0.00599551 )
 mesh = SubResource( 5 )
 material/0 = null
 
@@ -960,7 +960,7 @@ material/0 = null
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0.525985, 0.419459, -0.356188 )
 
 [node name="PataDelanteraL" type="MeshInstance" parent="GatoPardo/Empty003"]
-transform = Transform( -0.869167, 0.494518, 0, -0.494518, -0.869167, 0, 0, 0, 1, -0.0667785, -0.212777, -0.00738487 )
+transform = Transform( -0.869167, 0.494518, 0, -0.494518, -0.869167, 0, 0, 0, 1, 0.150529, -0.0908726, -0.00738487 )
 mesh = SubResource( 6 )
 material/0 = null
 
@@ -1000,10 +1000,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180521, -0.526478, 0 )
 shape = SubResource( 13 )
 
 [node name="pataDelanteDer" type="CollisionShape" parent="."]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.917859, -0.758002, 0.652775 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.330857, -0.993395, 0.652775 )
 shape = SubResource( 14 )
 
 [node name="pataDelanteIzq" type="CollisionShape" parent="."]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.0991587, -1.03087, -0.499043 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.374275, -0.900922, -0.499043 )
 shape = SubResource( 15 )
 [connection signal="body_entered" from="." to="." method="_on_bichillo_body_entered"]
