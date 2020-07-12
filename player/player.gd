@@ -10,14 +10,17 @@ onready var box_pos : Position3D = box.get_node("box_pos")
 onready var stage1 : GridMap = get_parent().get_node("stage1")
 onready var escape_points = get_parent().get_node("escape_points")
 
-enum {NORTH, SOUTH, WEST, EAST, UP, DOWN}
+enum {NORTH, SOUTH, WEST, EAST, UP, DOWN,START}
+
+var changes_of_state : int = 3
 
 const DIST_MIN : float = 1.2
 
 var gravity : = Vector3()
 var gravity_changed : bool = false
-var near_floor : bool = false
+var near_floor : bool = true
 var gravity_direction : int = DOWN
+var prev_gravity_direction : int = START
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,31 +29,37 @@ func _ready() -> void:
 
 func onetime_pressed() -> Vector3:
 	if Input.is_action_just_pressed("west"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(0,0,-force):
 			gravity_changed = true
 			gravity_direction = WEST
 		gravity = Vector3(0,0,-force)
 	if Input.is_action_just_pressed("east"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(0,0,force):
 			gravity_changed = true
 			gravity_direction = EAST
 		gravity = Vector3(0,0,force)
 	if Input.is_action_just_pressed("up"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(0,force,0):
 			gravity_changed = true
 			gravity_direction = UP
 		gravity = Vector3(0,force,0)
 	if Input.is_action_just_pressed("down"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(0,-force,0):
 			gravity_changed = true
 			gravity_direction = DOWN
 		gravity = Vector3(0,-force,0)
 	if Input.is_action_just_pressed("north"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(force,0,0):
 			gravity_changed = true
 			gravity_direction = NORTH
 		gravity = Vector3(force,0,0)
 	if Input.is_action_just_pressed("south"):
+		prev_gravity_direction = gravity_direction
 		if gravity != Vector3(-force,0,0):
 			gravity_changed = true
 			gravity_direction = SOUTH
@@ -72,9 +81,35 @@ func letit_pressed() -> Vector3:
 		gravity = Vector3(0,-force,0)
 	return gravity
 
+func get_prev_translation() -> Vector3:
+	var prev_trans : Vector3 = Vector3(0,0,0)
+	#START
+	if prev_gravity_direction == START:
+		pass
+	#WEST
+	if prev_gravity_direction == WEST:
+		prev_trans = Vector3(0,1,-1)
+	#EAST
+	if prev_gravity_direction == EAST:
+		prev_trans = Vector3(0,1,1)
+	#UP
+	if prev_gravity_direction == UP:
+		prev_trans = Vector3(0,2,0)
+	#DOWN
+	if prev_gravity_direction == DOWN:
+		prev_trans = Vector3(0,-2,0)
+	#NORTH
+	if prev_gravity_direction == NORTH:
+		prev_trans = Vector3(1,1,0)
+	#SOUTH
+	if prev_gravity_direction == SOUTH:
+		prev_trans = Vector3(1,-1,0)
+	return prev_trans
+
 func turn_bichillo() -> void:
 	#var transform_i = transform
 	#var transform_f
+	translation -= get_prev_translation()
 	#WEST
 	if gravity_direction == WEST:
 		rotation_degrees = Vector3(0,0,0)
@@ -213,6 +248,7 @@ func get_direction_run() -> Vector3:
 	#direction = pos_ooc - box_pos.translation
 	direction = direction * normal
 	direction = direction.normalized()
+	#self.look_at(escape_pos.translation,Vector3(0,1,0))
 	"""if direction.x == 0:
 		transform.basis.y = Vector3(0,direction.y,0)
 		transform.basis.z = Vector3(0,0,direction.z)
@@ -228,15 +264,19 @@ func _physics_process(delta: float) -> void:
 	#add_central_force(letit_pressed())
 	#linear_velocity = get_direction_run()
 	if gravity_changed:
+		if changes_of_state == 0:
+			end_game()
 		#linear_velocity = Vector3(0,0,0)
 		bichillo_anim.play("parado")
 		#Girar el bicho
 		turn_bichillo()
 		near_floor = false
 		gravity_changed = false
+		changes_of_state -= 1
 	elif is_near_floor():
-		bichillo_anim.play("andando")
-		linear_velocity = get_direction_run()
+		#bichillo_anim.play("andando")
+		bichillo_anim.play("parado")
+		#linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
 	#apply_central_impulse(onetime_pressed())
 
@@ -246,7 +286,16 @@ func _on_bichillo_body_entered(body: Node) -> void:
 	if body.is_in_group("wall"):
 		print(body.name)
 	elif body.is_in_group("bot"):
-		print("GANÉ")
-		print(body.name)
+		win()
 	elif body.is_in_group("bomb"):
 		print("PIERDES")
+
+func win() -> void:
+	print("YOU WIN")
+
+func end_game() -> void:
+	print("GAME OVER")
+	get_tree().paused = true
+
+func _on_Timer_timeout() -> void:
+	end_game()

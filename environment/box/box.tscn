@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://environment/box/box_wooden.material" type="Material" id=1]
 [ext_resource path="res://environment/box/caja.material" type="Material" id=2]
+
+[sub_resource type="PhysicsMaterial" id=5]
+friction = 0.0
+absorbent = true
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.001"
@@ -102,6 +106,7 @@ tracks/5/keys = {
 extents = Vector3( 1, 1, 0.163064 )
 
 [node name="box" type="StaticBody"]
+physics_material_override = SubResource( 5 )
 
 [node name="puerta" type="MeshInstance" parent="."]
 transform = Transform( -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 1, 0.928786, -0.0481246 )
@@ -133,7 +138,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.88884
 shape = SubResource( 4 )
 
 [node name="tapa" type="CollisionShape" parent="."]
-transform = Transform( -0.0216577, 0.518146, -0.855018, 0.0131205, 0.855292, 0.51798, 0.999679, 0, -0.025322, 1.4489, 1.73304, 0.02978 )
+transform = Transform( -0.0215217, 0.526911, -0.849648, 0.0133424, 0.84992, 0.526742, 0.999679, 0, -0.025322, 1.27069, 1.7141, 0.02978 )
 shape = SubResource( 4 )
 
 [node name="box_pos" type="Position3D" parent="."]
