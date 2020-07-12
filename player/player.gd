@@ -1,6 +1,6 @@
 extends RigidBody
 
-export var force : float = 10
+export var force : float = 5
 export var speed  : float = 10
 
 onready var bichillo : RigidBody = get_parent().get_node("bichillo")
@@ -79,6 +79,8 @@ func turn_bichillo() -> void:
 	if gravity_direction == WEST:
 		rotation_degrees = Vector3(0,0,0)
 		rotation_degrees.x = 90
+		translation.y += 1
+		translation.z -= 1
 		axis_lock_angular_x = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
@@ -86,30 +88,38 @@ func turn_bichillo() -> void:
 	if gravity_direction == EAST:
 		rotation_degrees = Vector3(0,0,0)
 		rotation_degrees.x = -90
+		translation.y += 1
+		translation.z += 1
 		axis_lock_angular_x = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
 	#UP
 	if gravity_direction == UP:
 		rotation_degrees.z = 180
+		translation.y += 2
 		axis_lock_angular_z = true
 		rotation_degrees.x = 0
 		axis_lock_angular_x = true
 	#DOWN
 	if gravity_direction == DOWN:
 		rotation_degrees.z = 0
+		translation.y -= 2
 		axis_lock_angular_z = true
 		rotation_degrees.x = 0
 		axis_lock_angular_x = true
 	#NORTH
 	if gravity_direction == NORTH:
 		rotation_degrees = Vector3(0,0,90)
+		translation.y += 1
+		translation.x += 1
 		axis_lock_angular_z = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true
 	#SOUTH
 	if gravity_direction == SOUTH:
 		rotation_degrees = Vector3(0,0,-90)
+		translation.y += 1
+		translation.x -= 1
 		axis_lock_angular_z = true
 		rotation_degrees.y = 0
 		axis_lock_angular_y = true

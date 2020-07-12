@@ -736,6 +736,7 @@ height = 0.330052
 extents = Vector3( 0.764318, 0.180214, 0.95534 )
 
 [node name="bichillo" type="RigidBody"]
+gravity_scale = 0.0
 contacts_reported = 4
 contact_monitor = true
 script = ExtResource( 1 )
