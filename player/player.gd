@@ -3,12 +3,23 @@ extends RigidBody
 export var force : float = 5
 export var speed  : float = 10
 
+export(bool) var humor setget set_humor
+
+func set_humor(tranquilo):
+	if(tranquilo):
+		set_chill_texture()
+	else:
+		set_berseker_texture()
+
+
 onready var bichillo : RigidBody = get_parent().get_node("bichillo")
 onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer")
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
 onready var stage1 : GridMap = get_parent().get_node("stage1")
 onready var escape_points = get_parent().get_node("escape_points")
+
+onready var malla : MeshInstance = get_parent().get_node("bichillo/Armaduramitado/Skeleton/mitadomochito")
 
 enum {NORTH, SOUTH, WEST, EAST, UP, DOWN,START}
 
@@ -299,3 +310,12 @@ func end_game() -> void:
 
 func _on_Timer_timeout() -> void:
 	end_game()
+
+
+func set_chill_texture():
+	var m=$Armaduramitado/Skeleton/mitadomochito
+	m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.jpg")
+	
+func set_berseker_texture():
+	var m=$Armaduramitado/Skeleton/mitadomochito
+	m.get_surface_material(0).albedo_texture=load("res://player/monstruo2/Cuerpo.color.messed.bad.jpg")
