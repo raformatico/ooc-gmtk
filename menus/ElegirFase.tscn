@@ -1,0 +1,210 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://menus/fonts/fuentes_negrita.tres" type="DynamicFont" id=2]
+[ext_resource path="res://player/monstruo2/bichillo_menu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menus/Credits.gd" type="Script" id=4]
+[ext_resource path="res://player/monstruo2/Cuerpo.color.messed.bad.jpg" type="Texture" id=5]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.511719, 0.511719, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.968, 1, 0.76, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+resource_local_to_scene = true
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "menu"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/Credits:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 5.5, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Select one level,
+and use  w,s,a,d,o,p to
+control the gravity.
+
+Get the critter back
+to the cage!
+(if you can control it)", "Get the critter back
+to the cage!
+(if you can control it)", "Everyone floats here...", "Good Luck!" ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("bichillo:translation:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -0.80955, -0.25, 0, 0.25, 0, -1.49427, -0.25, 0, 0.25, 0, -0.80955, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 9.9 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("bichillo:translation:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.175906, -0.25, 0, 0.25, 0, 0.175906, -0.25, 0, 0.25, 0, 0.175906, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 9.9 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("bichillo:translation:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -0.270778, -0.25, 0, 0.25, 0, 1.17502, -0.25, 0, 0.25, 0, -0.270778, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 9.9 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("bichillo:rotation_degrees:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("bichillo:rotation_degrees:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 11.394, -0.25, 0, 0.25, 0, -39.407, -0.25, 0, 0.25, 0, 156.163, -0.25, 0, 0.25, 0, 11.394, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("bichillo:rotation_degrees:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.1, 6.4, 9.9 )
+}
+
+[node name="Credits" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.02846, 0 )
+width = 7.48306
+depth = 5.99611
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.84709, -3.4816 )
+width = 7.48306
+depth = 5.99611
+material = SubResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="."]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -4.43812, 0.84709, 0.120615 )
+width = 7.48306
+depth = 5.99611
+material = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.411944, 0, 0.911209, 0, 1, 0, -0.911209, 0, 0.411944, 0, 0.471814, 1.07051 )
+
+[node name="bichillo" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.182939, 0, 0.080827, 0, 0.2, 0, -0.080827, 0, -0.182939, -1.4523, 0.175906, 1.0864 )
+
+[node name="mitadomochito" parent="bichillo/Armaduramitado/Skeleton" index="0"]
+material/0 = SubResource( 3 )
+
+[node name="AnimationPlayer" parent="bichillo" index="1"]
+playback_speed = 2.0
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.871779, 0.0112085, 0.489772, -0.4899, 0.0199456, 0.871551, 0, -0.999738, 0.0228792, 0.0353699, 2.05152, 0 )
+light_color = Color( 0.796078, 0.862745, 0.203922, 1 )
+shadow_enabled = true
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1026.0
+margin_bottom = 612.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -457.0
+margin_top = -266.0
+margin_right = 117.0
+margin_bottom = 175.0
+custom_fonts/font = ExtResource( 2 )
+text = "Everyone floats here..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 655.0
+margin_top = 73.0
+margin_right = 978.0
+margin_bottom = 585.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level0" type="Button" parent="Control/VBoxContainer"]
+margin_right = 323.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 0"
+flat = true
+
+[node name="level1" type="Button" parent="Control/VBoxContainer"]
+margin_top = 81.0
+margin_right = 323.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 1"
+flat = true
+
+[node name="level2" type="Button" parent="Control/VBoxContainer"]
+margin_top = 162.0
+margin_right = 323.0
+margin_bottom = 239.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 2"
+flat = true
+
+[node name="level3" type="Button" parent="Control/VBoxContainer"]
+margin_top = 243.0
+margin_right = 323.0
+margin_bottom = 320.0
+custom_fonts/font = ExtResource( 2 )
+text = "Level 3"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "menu"
+anims/menu = SubResource( 4 )
+[connection signal="pressed" from="Control/VBoxContainer/level0" to="." method="_on_level0_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/level1" to="." method="_on_level1_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/level2" to="." method="_on_level2_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/level3" to="." method="_on_level3_pressed"]
+
+[editable path="bichillo"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player/monstruo2/material_cuerpo_bad.material" type="Material" id=1]
+[ext_resource path="res://player/monstruo2/bichillo_menu.gd" type="Script" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "mitadomochito"
@@ -739,6 +740,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991151, 0 )
 gravity_scale = 0.0
 contacts_reported = 4
 contact_monitor = true
+script = ExtResource( 2 )
+humor = true
 
 [node name="Armaduramitado" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0535, 0 )

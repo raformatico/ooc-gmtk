@@ -16,5 +16,18 @@ func _ready():
 #	pass
 
 
-func _on_BackButton_pressed():
-	get_tree().change_scene("res://Menu.tscn")
+
+func _on_level0_pressed():
+	get_tree().change_scene("res://world1.tscn")
+
+
+func _on_level1_pressed():
+	get_tree().change_scene("res://world2.tscn")
+
+
+func _on_level2_pressed():
+	get_tree().change_scene("res://world3.tscn")
+
+
+func _on_level3_pressed():
+	get_tree().change_scene("res://world4.tscn")

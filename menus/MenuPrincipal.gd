@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Credits_pressed():
 	get_tree().change_scene("res://menus/Credits.tscn")
+
+
+func _on_Play2_pressed():
+	get_tree().change_scene("res://menus/ElegirFase.tscn")
