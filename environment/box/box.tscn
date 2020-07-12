@@ -103,6 +103,7 @@ tracks/5/keys = {
 extents = Vector3( 1, 1, 0.163064 )
 
 [node name="box" type="StaticBody"]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0 )
 physics_material_override = SubResource( 1 )
 
 [node name="puerta" type="MeshInstance" parent="."]
