@@ -16,7 +16,7 @@ const DIST_MIN : float = 1.2
 
 var gravity : = Vector3()
 var gravity_changed : bool = false
-var near_floor : bool = true
+var near_floor : bool = false
 var gravity_direction : int = DOWN
 
 # Called when the node enters the scene tree for the first time.
@@ -214,16 +214,6 @@ func get_direction_run() -> Vector3:
 		transform.basis.x = Vector3(direction.x,0,0)"""
 	return direction*speed
 
-func _on_player_body_entered(body: Node) -> void:
-	print("entra algo... " + str(body.name))
-	if body.is_in_group("wall"):
-		print(body.name)
-	elif body.is_in_group("box"):
-		print("FIN")
-		print(body.name)
-	elif body.is_in_group("bomb"):
-		print("PIERDES")
-
 func _physics_process(delta: float) -> void:
 	#add_central_force(letit_pressed())
 	#linear_velocity = get_direction_run()
@@ -239,3 +229,14 @@ func _physics_process(delta: float) -> void:
 		linear_velocity = get_direction_run()
 	add_central_force(onetime_pressed())
 	#apply_central_impulse(onetime_pressed())
+
+
+func _on_bichillo_body_entered(body: Node) -> void:
+	print("entra algo... " + str(body.name))
+	if body.is_in_group("wall"):
+		print(body.name)
+	elif body.is_in_group("bot"):
+		print("GANÉ")
+		print(body.name)
+	elif body.is_in_group("bomb"):
+		print("PIERDES")
