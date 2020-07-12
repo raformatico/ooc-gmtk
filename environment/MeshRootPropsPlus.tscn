@@ -6,19 +6,19 @@
 [ext_resource path="res://environment/props/Models/OBJ format/mi_pared.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://environment/props/Models/OBJ format/mi_techo.obj" type="ArrayMesh" id=5]
 
-[sub_resource type="BoxShape" id=38]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.515894, 0.0374773, 0.497456 )
 
-[sub_resource type="BoxShape" id=43]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.5, 0.649688, 0.039 )
 
-[sub_resource type="BoxShape" id=49]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.5, 0.7, 0.05 )
 
-[sub_resource type="BoxShape" id=55]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.5, 0.7, 0.05 )
 
-[sub_resource type="BoxShape" id=56]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.5, 0.0423333, 0.5 )
 
 [node name="meshes" type="Spatial"]
@@ -32,7 +32,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="mi_floor/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0251204, -0.50236 )
-shape = SubResource( 38 )
+shape = SubResource( 1 )
 
 [node name="mi_pared" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
@@ -44,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="mi_pared/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644863, 0.0253426 )
-shape = SubResource( 43 )
+shape = SubResource( 2 )
 
 [node name="mi_puerta" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0 )
@@ -57,7 +57,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="mi_puerta/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622035, 0.0358919 )
-shape = SubResource( 49 )
+shape = SubResource( 3 )
 
 [node name="mi_ventana" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0 )
@@ -70,7 +70,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="mi_ventana/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0.0288283 )
-shape = SubResource( 55 )
+shape = SubResource( 4 )
 
 [node name="mi_techo" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
@@ -81,4 +81,4 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="mi_techo/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0293053, 0 )
-shape = SubResource( 56 )
+shape = SubResource( 5 )

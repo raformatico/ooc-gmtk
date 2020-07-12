@@ -40,6 +40,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func onetime_pressed() -> Vector3:
+	if Input.is_action_just_pressed("reload"):
+		replay()
 	if Input.is_action_just_pressed("west"):
 		if gravity != Vector3(0,0,-force):
 			gravity_changed = true
@@ -141,6 +143,9 @@ func unloock_axis() -> void:
 	axis_lock_angular_y = false
 	axis_lock_angular_z = false
 
+func replay() -> void:
+	get_tree().reload_current_scene()
+
 func is_near_floor() -> bool:
 	var near : bool = false
 	var distance : float
@@ -152,32 +157,32 @@ func is_near_floor() -> bool:
 	else:
 		#WEST
 		if gravity_direction == WEST:
-			pos = stage.get_node("p_west")
+			pos = get_parent().get_node("p_west")
 			plane = Plane(Vector3(0,0,1),pos.translation.z)
 		#EAST
 		if gravity_direction == EAST:
-			pos = stage.get_node("p_east")
+			pos = get_parent().get_node("p_east")
 			plane = Plane(Vector3(0,0,1),pos.translation.z)
 		#UP
 		if gravity_direction == UP:
-			pos = stage.get_node("p_up")
+			pos = get_parent().get_node("p_up")
 			plane = Plane(Vector3(0,1,0),pos.translation.y)
 		#DOWN
 		if gravity_direction == DOWN:
-			pos = stage.get_node("p_down")
+			pos = get_parent().get_node("p_down")
 			plane = Plane(Vector3(0,1,0),pos.translation.y)
 		#NORTH
 		if gravity_direction == NORTH:
-			pos = stage.get_node("p_north")
-			plane = Plane(Vector3(-1,0,0),pos.translation.x)
+			pos = get_parent().get_node("p_north")
+			plane = Plane(Vector3(1,0,0),pos.translation.x)
 		#SOUTH
 		if gravity_direction == SOUTH:
-			pos = stage.get_node("p_south")
-			plane = Plane(Vector3(-1,0,0),pos.translation.x)
-		print(plane.distance_to(translation))
+			pos = get_parent().get_node("p_south")
+			plane = Plane(Vector3(1,0,0),pos.translation.x)
 		if abs(plane.distance_to(translation)) < DIST_MIN:
-			near = true
-	return near
+			print("NEAR TRUE")
+			near_floor = true
+	return near_floor
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func get_direction_run() -> Vector3:
@@ -264,6 +269,7 @@ func _on_bichillo_body_entered(body: Node) -> void:
 		print("PIERDES")
 
 func win() -> void:
+	box.get_node("AnimationPlayer").play_backwards("abierto")
 	print("YOU WIN")
 
 func end_game() -> void:
