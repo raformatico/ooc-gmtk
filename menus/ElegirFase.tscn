@@ -121,7 +121,7 @@ material = SubResource( 2 )
 transform = Transform( 0.411944, 0, 0.911209, 0, 1, 0, -0.911209, 0, 0.411944, 0, 0.471814, 1.07051 )
 
 [node name="bichillo" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.196058, 0, 0.0395108, 0, 0.2, 0, -0.0395108, 0, 0.196058, -0.80955, 0.175906, -0.270778 )
+transform = Transform( 0.196058, 0, 0.0395109, 0, 0.2, 0, -0.0395109, 0, 0.196058, -0.80955, 0.175906, -0.270778 )
 
 [node name="mitadomochito" parent="bichillo/Armaduramitado/Skeleton" index="0"]
 material/0 = SubResource( 3 )
@@ -154,10 +154,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Select one level,
 and use  w,s,a,d,o,p to
 control the gravity.
-
-Get the critter back
-to the cage!
-(if you can control it)"
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
