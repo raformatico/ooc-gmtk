@@ -853,4 +853,4 @@ shape = SubResource( 8 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.518517, 0 )
 shape = SubResource( 9 )
-[connection signal="body_entered" from="." to="." method="_on_player_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_bichillo_body_entered"]
