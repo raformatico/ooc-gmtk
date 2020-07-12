@@ -56,19 +56,19 @@ shadow_enabled = true
 [node name="escape_points" type="Spatial" parent="."]
 
 [node name="esc_north" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 16, 10 )
 
 [node name="esc_south" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 15, 10 )
 
 [node name="esc_east" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 16, 10 )
 
 [node name="esc_west" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 15, -5 )
 
 [node name="esc_up" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 16, 10 )
 
 [node name="esc_down" type="Position3D" parent="escape_points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
