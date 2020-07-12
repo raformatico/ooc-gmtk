@@ -2,10 +2,20 @@ extends RigidBody
 
 export var force : float = 10
 export var speed  : float = 10
+onready var bichillo : RigidBody = get_parent().get_node("bichillo")
+onready var bichillo_anim : AnimationPlayer = bichillo.get_node("AnimationPlayer")
 onready var box : StaticBody = get_parent().get_node("box") 
 onready var box_pos : Position3D = box.get_node("box_pos")
+onready var stage1 : GridMap = get_parent().get_node("stage1")
+
+enum {NORTH, SOUTH, WEST, EAST, UP, DOWN}
+
+const DIST_MIN : float = 1.2
 
 var gravity : = Vector3()
+var gravity_changed : bool = false
+var near_floor : bool = true
+var gravity_direction : int = DOWN
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,16 +24,34 @@ func _ready() -> void:
 
 func onetime_pressed() -> Vector3:
 	if Input.is_action_just_pressed("west"):
+		if gravity != Vector3(0,0,-force):
+			gravity_changed = true
+			gravity_direction = WEST
 		gravity = Vector3(0,0,-force)
 	if Input.is_action_just_pressed("east"):
+		if gravity != Vector3(0,0,force):
+			gravity_changed = true
+			gravity_direction = EAST
 		gravity = Vector3(0,0,force)
 	if Input.is_action_just_pressed("up"):
+		if gravity != Vector3(0,force,0):
+			gravity_changed = true
+			gravity_direction = UP
 		gravity = Vector3(0,force,0)
 	if Input.is_action_just_pressed("down"):
+		if gravity != Vector3(0,-force,0):
+			gravity_changed = true
+			gravity_direction = DOWN
 		gravity = Vector3(0,-force,0)
 	if Input.is_action_just_pressed("north"):
+		if gravity != Vector3(force,0,0):
+			gravity_changed = true
+			gravity_direction = NORTH
 		gravity = Vector3(force,0,0)
 	if Input.is_action_just_pressed("south"):
+		if gravity != Vector3(-force,0,0):
+			gravity_changed = true
+			gravity_direction = SOUTH
 		gravity = Vector3(-force,0,0)
 	return gravity
 
@@ -42,19 +70,114 @@ func letit_pressed() -> Vector3:
 		gravity = Vector3(0,-force,0)
 	return gravity
 
+func turn_bichillo() -> void:
+	#WEST
+	if gravity_direction == WEST:
+		rotation_degrees = Vector3(0,0,0)
+		rotation_degrees.x = 90
+		axis_lock_angular_x = true
+		rotation_degrees.y = 0
+		axis_lock_angular_y = true
+	#EAST
+	if gravity_direction == EAST:
+		rotation_degrees = Vector3(0,0,0)
+		rotation_degrees.x = -90
+		axis_lock_angular_x = true
+		rotation_degrees.y = 0
+		axis_lock_angular_y = true
+	#UP
+	if gravity_direction == UP:
+		rotation_degrees.z = 180
+		axis_lock_angular_z = true
+		rotation_degrees.x = 0
+		axis_lock_angular_x = true
+	#DOWN
+	if gravity_direction == DOWN:
+		rotation_degrees.z = 0
+		axis_lock_angular_z = true
+		rotation_degrees.x = 0
+		axis_lock_angular_x = true
+	#NORTH
+	if gravity_direction == NORTH:
+		rotation_degrees = Vector3(0,0,90)
+		axis_lock_angular_z = true
+		rotation_degrees.y = 0
+		axis_lock_angular_y = true
+	#SOUTH
+	if gravity_direction == SOUTH:
+		rotation_degrees = Vector3(0,0,-90)
+		axis_lock_angular_z = true
+		rotation_degrees.y = 0
+		axis_lock_angular_y = true
+
+func unloock_axis() -> void:
+	axis_lock_angular_x = false
+	axis_lock_angular_y = false
+	axis_lock_angular_z = false
+
+func is_near_floor() -> bool:
+	var near : bool = false
+	var distance : float
+	var pos : Position3D
+	var plane : Plane
+	if near_floor == true and gravity_changed == false:
+		near = near_floor
+	else:
+		#WEST
+		if gravity_direction == WEST:
+			pos = stage1.get_node("p_west")
+			plane = Plane(Vector3(0,0,1),pos.translation.z)
+		#EAST
+		if gravity_direction == EAST:
+			pos = stage1.get_node("p_east")
+			plane = Plane(Vector3(0,0,1),pos.translation.z)
+		#UP
+		if gravity_direction == UP:
+			pos = stage1.get_node("p_up")
+			plane = Plane(Vector3(0,1,0),pos.translation.y)
+		#DOWN
+		if gravity_direction == DOWN:
+			pos = stage1.get_node("p_down")
+			plane = Plane(Vector3(0,1,0),pos.translation.y)
+		#NORTH
+		if gravity_direction == NORTH:
+			pos = stage1.get_node("p_north")
+			plane = Plane(Vector3(-1,0,0),pos.translation.x)
+		#SOUTH
+		if gravity_direction == SOUTH:
+			pos = stage1.get_node("p_south")
+			plane = Plane(Vector3(-1,0,0),pos.translation.x)
+			
+		print(plane.distance_to(translation))
+		if abs(plane.distance_to(translation)) < DIST_MIN:
+			near = true
+	return near
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	#add_central_force(letit_pressed())
-	#linear_velocity = get_direction_run()
-	add_central_force(onetime_pressed())
-	#apply_central_impulse(onetime_pressed())
-	
-	
 func get_direction_run() -> Vector3:
 	#Hacerlo en función de la dirección de la gravedad
 	#Devolver una velocidad solo si toca el suelo correspondiente a la gravedad
 	var pos_ooc : Vector3 = self.translation
 	var direction : Vector3 = pos_ooc - box_pos.translation
+	var normal : Vector3
+	#WEST
+	if gravity_direction == WEST:
+		normal = Vector3(1,1,0)
+	#EAST
+	if gravity_direction == EAST:
+		normal = Vector3(1,1,0)
+	#UP
+	if gravity_direction == UP:
+		normal = Vector3(1,0,1)
+	#DOWN
+	if gravity_direction == DOWN:
+		normal = Vector3(1,0,1)
+	#NORTH
+	if gravity_direction == NORTH:
+		normal = Vector3(0,1,1)
+	#SOUTH
+	if gravity_direction == SOUTH:
+		normal = Vector3(0,1,1)
 	direction = direction * Vector3(1,0,1)
 	return direction.normalized()*speed
 
@@ -67,3 +190,19 @@ func _on_player_body_entered(body: Node) -> void:
 		print(body.name)
 	elif body.is_in_group("bomb"):
 		print("PIERDES")
+
+func _physics_process(delta: float) -> void:
+	#add_central_force(letit_pressed())
+	#linear_velocity = get_direction_run()
+	if gravity_changed:
+		#linear_velocity = Vector3(0,0,0)
+		bichillo_anim.play("parado")
+		#Girar el bicho
+		turn_bichillo()
+		near_floor = false
+		gravity_changed = false
+	elif is_near_floor():
+		bichillo_anim.play("andando")
+		linear_velocity = get_direction_run()
+	add_central_force(onetime_pressed())
+	#apply_central_impulse(onetime_pressed())
