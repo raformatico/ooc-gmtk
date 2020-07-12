@@ -99,10 +99,9 @@ tracks/5/keys = {
 }
 
 [sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 1, 0.163064 )
 
-[node name="box" type="Area" groups=[
-"box",
-]]
+[node name="box" type="StaticBody"]
 
 [node name="puerta" type="MeshInstance" parent="."]
 transform = Transform( -0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 1, 0.928786, -0.0481246 )
@@ -118,6 +117,29 @@ autoplay = "abierto"
 anims/abierto = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.840496 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.857732, 0, 0.0176087 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.888845, 0, 0.0176087 )
+shape = SubResource( 4 )
+
+[node name="bot" type="CollisionShape" parent="." groups=[
+"box",
+]]
+transform = Transform( 0.9, 0, 0, 0, -3.49691e-08, -1, 0, 0.8, -4.37114e-08, 0, -0.804418, -0.00301832 )
+shape = SubResource( 4 )
+
+[node name="tapa" type="CollisionShape" parent="."]
+transform = Transform( -0.0216577, 0.518146, -0.855018, 0.0131205, 0.855292, 0.51798, 0.999679, 0, -0.025322, 1.4489, 1.73304, 0.02978 )
 shape = SubResource( 4 )
 
 [node name="box_pos" type="Position3D" parent="."]
