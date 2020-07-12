@@ -1,43 +1,55 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://environment/box/box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environment/envir_mesh_plus.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://player/monstruo2/bichillo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://environment/stage1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/box/box.tscn" type="PackedScene" id=3]
 
-[node name="world" type="Spatial"]
+[node name="Nivel0" type="Spatial"]
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.545707, 0.395084, -0.738994, 0, 0.88188, 0.471474, 0.837976, -0.257287, 0.481248, -15.1177, 16.7143, 20.6863 )
-
-[node name="stage1" parent="." instance=ExtResource( 3 )]
+[node name="stage1" type="GridMap" parent="."]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+mesh_library = ExtResource( 1 )
+cell_size = Vector3( 1, 1.25, 1 )
 data = {
-"cells": PoolIntArray( 2, 0, 1441794, 4, 0, 537919491, 458752, 0, 1376259, 0, 1, 538312706, 1, 1, 538312706, 2, 1, 538312706, 65535, 1, 538312706, 1, 2, 538312706, 2, 2, 1441794, 65533, 2, 1441794, 65534, 2, 1441794, 65535, 2, 538312706, 458752, 2, 538247171, 524282, 2, 538247171, 4, 3, 1074790403, 65531, 3, 1075183619, 458752, 5, 1376259, 524281, 6, 538247171, 524283, 6, 538247171, 2, 7, 1612054530, 4, 7, 1048579, 65531, 7, 538312707, 65533, 7, 538312706, 458752, 8, 1376259, 2, 9, 1073741827, 65533, 9, 1610612739, 65538, 9, 3, 131069, 9, 536870915, 458752, 10, 538247171, 524281, 10, 1376259, 524282, 11, 538247171, 2, 65531, 537526275, 65533, 65531, 1074397187, 65538, 65531, 537526275, 131069, 65531, 537526275, 0, 65533, 1441794, 1, 65533, 538312706, 2, 65533, 1441794, 4, 65533, 1048579, 65531, 65533, 1612054531, 65533, 65533, 1441794, 458752, 65533, 538247171, 524282, 65533, 1075118083, 524285, 65533, 538247171, 1, 65534, 1441794, 2, 65534, 1441794, 65535, 65534, 538312706, 2, 65535, 538312706, 65531, 65535, 1612054531 )
+"cells": PoolIntArray( 0, 0, 5, 1, 0, 536870917, 2, 0, 1048583, 65534, 0, 1441799, 65535, 0, 5, 65538, 0, 1048583, 131070, 0, 1441799, 0, 1, 5, 1, 1, 5, 2, 1, 1048583, 65534, 1, 1441799, 65535, 1, 5, 65538, 1, 1048583, 131070, 1, 1441799, 0, 2, 7, 1, 2, 7, 65535, 2, 7, 65536, 2, 7, 65537, 2, 536870919, 131071, 2, 7, 0, 65534, 655367, 1, 65534, 655367, 65535, 65534, 655367, 65536, 65534, 655367, 65537, 65534, 655367, 131071, 65534, 655367, 0, 65535, 536870917, 1, 65535, 5, 2, 65535, 1048583, 65534, 65535, 538312711, 65535, 65535, 5, 65538, 65535, 1048583, 131070, 65535, 1441799 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
 }
 
-[node name="box" parent="." instance=ExtResource( 1 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 2.81986, 4.43936, -5.2187 )
+[node name="p_north" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916491, 2.15249, -1.43155 )
 
-[node name="escape_points" type="Spatial" parent="."]
+[node name="p_south" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.824261, 2.55805, 1.98341 )
 
-[node name="esc_north" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 12, 20 )
+[node name="p_west" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00107, 2.72876, 1.6412 )
 
-[node name="esc_south" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 12, 20 )
+[node name="p_east" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.81722, 0.328196, 1.53504 )
 
-[node name="esc_east" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 12, 20 )
+[node name="p_up" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17327, 2.854, 1.12877 )
 
-[node name="esc_west" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 12, -9 )
-
-[node name="esc_up" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 12, 20 )
-
-[node name="esc_down" type="Position3D" parent="escape_points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 20 )
+[node name="p_down" type="Position3D" parent="stage1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93239, 0.682843, 1.66586 )
 
 [node name="bichillo" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3.8699, 10 )
+transform = Transform( 0.984808, 0.17101, -0.0301537, 0, -0.173648, -0.984808, -0.173648, 0.969846, -0.17101, 0, 5.811, 0 )
+humor = true
 
-[editable path="box"]
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 9.65997, 16.9489, 9.61255 )
+projection = 1
+size = 20.0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 18.3308, 5.69526 )
+shadow_enabled = true
+
+[node name="box" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5803, 4.31558, 0 )
+
+[node name="escape_points" type="Spatial" parent="."]

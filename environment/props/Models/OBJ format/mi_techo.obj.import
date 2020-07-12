@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/mi_techo.obj-92eb07d0c5299c8d02aaf7472b6d3a04.mesh"
+
+[deps]
+
+files=[ "res://.import/mi_techo.obj-92eb07d0c5299c8d02aaf7472b6d3a04.mesh" ]
+
+source_file="res://environment/props/Models/OBJ format/mi_techo.obj"
+dest_files=[ "res://.import/mi_techo.obj-92eb07d0c5299c8d02aaf7472b6d3a04.mesh", "res://.import/mi_techo.obj-92eb07d0c5299c8d02aaf7472b6d3a04.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
