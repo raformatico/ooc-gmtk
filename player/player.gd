@@ -183,7 +183,6 @@ func is_near_floor() -> bool:
 			pos = get_parent().get_node("p_south")
 			plane = Plane(Vector3(1,0,0),pos.translation.x)
 		if abs(plane.distance_to(translation)) < DIST_MIN:
-			print("NEAR TRUE")
 			near_floor = true
 	return near_floor
 
@@ -225,29 +224,15 @@ func get_direction_run() -> Vector3:
 		escape_pos = escape_points.get_node("esc_south")
 		direction = escape_pos.translation - pos_ooc
 		normal = Vector3(0,1,1)
-	#direction = pos_ooc - box_pos.translation
 	direction = direction * normal
 	direction = direction.normalized()
-	#self.look_at(escape_pos.translation,Vector3(0,1,0))
-	"""if direction.x == 0:
-		transform.basis.y = Vector3(0,direction.y,0)
-		transform.basis.z = Vector3(0,0,direction.z)
-	elif direction.y == 0:
-		transform.basis.x = Vector3(direction.x,0,0)
-		transform.basis.z = Vector3(0,0,direction.z)
-	elif direction.z == 0:
-		transform.basis.y = Vector3(0,direction.y,0)
-		transform.basis.x = Vector3(direction.x,0,0)"""
 	return direction*speed
 
 func _physics_process(delta: float) -> void:
 	
-	#add_central_force(letit_pressed())
-	#linear_velocity = get_direction_run()
 	if gravity_changed:
 		if changes_of_state == 0:
 			end_game()
-		#linear_velocity = Vector3(0,0,0)
 		bichillo_anim.play("parado")
 		#Girar el bicho
 		turn_bichillo()
@@ -264,31 +249,21 @@ func _physics_process(delta: float) -> void:
 
 func _on_bichillo_body_entered(body: Node) -> void:
 	bichillo_anim.play("choque")
-	print("entra algo... " + str(body.name))
 	if body.is_in_group("wall"):
-		print(body.name)
+		pass
 	elif body.is_in_group("bot"):
 		win()
 	elif body.is_in_group("bomb"):
-		print("PIERDES")
+		pass
 
 func win() -> void:
 	var box_anim : AnimationPlayer = box.get_node("AnimationPlayer")
 	box_anim.play_backwards("abierto")
 	yield(box_anim,"animation_finished")
 	get_tree().change_scene("res://menus/ElegirFase.tscn")
-	"""if get_parent().name == "world1":
-		get_tree().change_scene("res://world2.tscn")
-	elif get_parent().name == "world2":
-		get_tree().change_scene("res://world3.tscn")
-	elif get_parent().name == "world3":
-		get_tree().change_scene("res://world4.tscn")
-	elif get_parent().name == "world4":
-		print("Se acabó lo bueno")"""
 	
 
 func end_game() -> void:
-	print("GAME OVER")
 	get_tree().change_scene("res://menus/ElegirFase.tscn")
 
 func _on_Timer_timeout() -> void:
